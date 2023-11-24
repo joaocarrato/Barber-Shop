@@ -33,6 +33,7 @@
 		799B3E3B2B0EE90700DC7984 /* FontAwesome6_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 799B3E282B0EE90700DC7984 /* FontAwesome6_Brands.ttf */; };
 		799B3E3C2B0EE90700DC7984 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 799B3E292B0EE90700DC7984 /* MaterialIcons.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		A5D7D53E7BC24C2A8AC2CCDA /* Poppins Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5EF7FE16CDE3439892AC177F /* Poppins Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,7 @@
 		5709B34CF0A7D63546082F79 /* Pods-BarberApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BarberApp.release.xcconfig"; path = "Target Support Files/Pods-BarberApp/Pods-BarberApp.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-BarberApp-BarberAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BarberApp-BarberAppTests.debug.xcconfig"; path = "Target Support Files/Pods-BarberApp-BarberAppTests/Pods-BarberApp-BarberAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-BarberApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-BarberApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5EF7FE16CDE3439892AC177F /* Poppins Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins Regular.ttf"; path = "../assets/Poppins Regular.ttf"; sourceTree = "<group>"; };
 		799B3E172B0EE90700DC7984 /* Fontisto.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fontisto.ttf; sourceTree = "<group>"; };
 		799B3E182B0EE90700DC7984 /* Octicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Octicons.ttf; sourceTree = "<group>"; };
 		799B3E192B0EE90700DC7984 /* Feather.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Feather.ttf; sourceTree = "<group>"; };
@@ -135,6 +137,15 @@
 			name = BarberApp;
 			sourceTree = "<group>";
 		};
+		25ED3E1B0336465CB75E6123 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5EF7FE16CDE3439892AC177F /* Poppins Regular.ttf */,
+			);
+			name = Resources;
+			path = "";
+			sourceTree = "<group>";
+		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +198,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				25ED3E1B0336465CB75E6123 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -328,6 +340,7 @@
 				799B3E392B0EE90700DC7984 /* FontAwesome6_Solid.ttf in Resources */,
 				799B3E2D2B0EE90700DC7984 /* FontAwesome6_Regular.ttf in Resources */,
 				799B3E3C2B0EE90700DC7984 /* MaterialIcons.ttf in Resources */,
+				A5D7D53E7BC24C2A8AC2CCDA /* Poppins Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

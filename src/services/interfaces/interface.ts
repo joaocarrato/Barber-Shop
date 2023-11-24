@@ -10,10 +10,6 @@ export interface IBarber {
 }
 
 export interface IUser {
-  users: User[];
-}
-
-export interface User {
   name: string;
   username: string;
   password: string;

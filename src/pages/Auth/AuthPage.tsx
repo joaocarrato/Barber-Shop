@@ -1,45 +1,56 @@
 import { useNavigation } from '@react-navigation/native';
-import { useQuery } from '@tanstack/react-query';
 import React from 'react';
-import { Button, SafeAreaView, Text, TextInput } from 'react-native';
+import {
+  Image,
+  ScrollView,
+  Text,
+  TouchableOpacity,
+  View,
+  useWindowDimensions,
+} from 'react-native';
 import { StackTypes } from '../../routes/Stack/StackNav';
-import { getUser } from '../../services/infra/user.service';
-import ErrorView from '../../utils/components/ErrorView';
-import LoadingCircle from '../../utils/components/LoadingCircle';
+import Divider from '../../utils/components/Divider';
+import { Insta, Logo, Vetor } from '../../utils/global/icons';
 import { styles } from './styles';
 
 const AuthPage = () => {
-  const { error, isLoading, data } = useQuery({
-    queryKey: ['users'],
-    queryFn: () => getUser(),
-  });
-
   const navigation = useNavigation<StackTypes>();
 
-  if (error) {
-    return <ErrorView errorName="Falha ao processar informação" />;
-  }
+  const { height } = useWindowDimensions();
 
-  if (isLoading) {
-    return <LoadingCircle />;
-  }
-
-  if (!data) {
-    return <ErrorView errorName="Nenhum barbeiro encontrado" />;
-  }
+  const handleNavigation = () => {
+    return navigation.navigate('Login');
+  };
 
   return (
-    <SafeAreaView style={styles.safeArea}>
-      <Text style={styles.title}>LOGIN</Text>
+    <ScrollView
+      style={styles.container}
+      scrollEnabled={height < 700 ? true : false}>
+      <View style={styles.header}>
+        <TouchableOpacity style={styles.button} onPress={handleNavigation}>
+          <Text style={styles.buttonTxt}>Entrar</Text>
+        </TouchableOpacity>
+        <Image source={Insta} style={styles.insta} />
+      </View>
 
-      <TextInput placeholder="username" style={styles.input} />
-      <TextInput placeholder="email" style={styles.input} />
-      <TextInput placeholder="senha" style={styles.input} />
+      <Image source={Logo} style={styles.logo} />
 
-      {/* <FlatList data={data} renderItem={({ item }) => <Text>{}</Text>} /> */}
+      <Image source={Vetor} style={styles.vetor} />
 
-      <Button title="Go" onPress={() => navigation.navigate('TabNav')} />
-    </SafeAreaView>
+      <Divider />
+
+      <View style={styles.footContainer}>
+        <Text style={styles.descriptionText}>
+          Um novo conceito em barbearia
+        </Text>
+        <TouchableOpacity style={styles.bigButton} onPress={handleNavigation}>
+          <Text style={styles.buttonTxt}>Agendar horário</Text>
+        </TouchableOpacity>
+        <Text style={styles.copyText}>
+          Todos os direitos reservados ® Thbarberclub
+        </Text>
+      </View>
+    </ScrollView>
   );
 };
 
