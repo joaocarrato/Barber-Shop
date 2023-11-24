@@ -15,8 +15,9 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   buttonTxt: {
-    fontSize: 18,
+    fontSize: 20,
     fontWeight: 'bold',
+    fontFamily: fonts.poppins.black,
     color: 'white',
   },
   insta: {
@@ -46,16 +47,19 @@ export const styles = StyleSheet.create({
     color: colors.orange,
     fontFamily: fonts.poppins.bold,
   },
-  input: {
-    borderWidth: 3.5,
-    borderColor: colors.orange,
-    borderRadius: 24,
+  bigButton: {
+    marginTop: 80,
     height: 60,
-    paddingHorizontal: 12,
-    width: '90%',
-    fontSize: 18,
-    fontWeight: 'bold',
-    fontFamily: fonts.poppins.bold,
-    color: 'white',
+    width: 220,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: colors.orange,
+    borderRadius: 14,
+  },
+  copyText: {
+    alignSelf: 'center',
+    color: 'grey',
+    top: 12,
+    fontSize: 12,
   },
 });

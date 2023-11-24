@@ -8,9 +8,11 @@ import {
   View,
   useWindowDimensions,
 } from 'react-native';
+import BarberLogo from '../../components/atoms/BarberLogo';
+import InstaLogo from '../../components/atoms/InstaLogo';
 import { StackTypes } from '../../routes/Stack/StackNav';
 import Divider from '../../utils/components/Divider';
-import { Insta, Logo, Vetor } from '../../utils/global/icons';
+import { Background } from '../../utils/global/icons';
 import { styles } from './styles';
 
 const AuthPage = () => {
@@ -30,14 +32,14 @@ const AuthPage = () => {
         <TouchableOpacity style={styles.button} onPress={handleNavigation}>
           <Text style={styles.buttonTxt}>Entrar</Text>
         </TouchableOpacity>
-        <Image source={Insta} style={styles.insta} />
+        <InstaLogo />
       </View>
 
-      <Image source={Logo} style={styles.logo} />
+      <BarberLogo />
 
-      <Image source={Vetor} style={styles.vetor} />
+      <Image source={Background} style={styles.vetor} />
 
-      <Divider />
+      <Divider marginBot={10} />
 
       <View style={styles.footContainer}>
         <Text style={styles.descriptionText}>

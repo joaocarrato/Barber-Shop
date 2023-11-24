@@ -1,15 +1,17 @@
 import { useNavigation } from '@react-navigation/native';
-import React from 'react';
-import { Text, View, useWindowDimensions } from 'react-native';
+import React, { useState } from 'react';
+import { Image, Text, View, useWindowDimensions } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-import BarberLogo from '../../../components/atoms/BarberLogo';
 import CustomButton from '../../../components/molecules/CustomButton';
 import CustomHeader from '../../../components/molecules/CustomHeader';
 import TextField from '../../../components/molecules/TextField';
 import { StackTypes } from '../../../routes/Stack/StackNav';
+import { Logo } from '../../../utils/global/icons';
 import { styles } from './styles';
 
-const Login = () => {
+const Register = () => {
+  const [error, setError] = useState<string>('');
+
   const { height } = useWindowDimensions();
 
   const navigation = useNavigation<StackTypes>();
@@ -22,8 +24,8 @@ const Login = () => {
 
   return (
     <KeyboardAwareScrollView
-      extraScrollHeight={1}
-      extraHeight={77}
+      extraHeight={75}
+      extraScrollHeight={0.1}
       style={styles.container}
       scrollEnabled={handleScroll}>
       <CustomHeader
@@ -32,40 +34,38 @@ const Login = () => {
         onPress={handleBack}
       />
 
-      <BarberLogo />
+      <Image source={Logo} style={styles.logo} />
 
-      <Text style={styles.title}>Entre agora</Text>
+      <Text style={styles.title}>Cadastre-se agora</Text>
       <View style={{ flexDirection: 'row', justifyContent: 'center' }}>
         <Text style={styles.subTitle}>Ou faça o </Text>
-        <Text style={styles.subTitleOrange}>cadastro </Text>
+        <Text style={styles.subTitleOrange}>login </Text>
         <Text style={styles.subTitle}>agora</Text>
       </View>
 
-      <View style={{ alignItems: 'center', marginTop: 120, gap: 15 }}>
+      <View style={{ alignItems: 'center', marginTop: 25, gap: 15 }}>
+        <TextField placeHolderText="Nome completo" obscure={false} />
+
         <TextField placeHolderText="Email" obscure={false} />
 
         <TextField placeHolderText="Digite sua senha" obscure={true} />
-
-        <CustomButton
-          text="Esqueceu sua senha?"
-          textStyle={styles.subTitle}
-          buttonStyle={{ alignSelf: 'flex-end', marginRight: 24 }}
-        />
-
+        <TextField placeHolderText="Confirme sua senha" obscure={true} />
         {/* BOTAO */}
 
+        <Text>{error}</Text>
+
         <CustomButton
-          text="Entrar"
+          text="Registrar"
           textStyle={styles.buttonTxt}
           buttonStyle={styles.bigButton}
-          onPress={() => navigation.navigate('Home')}
+          onPress={() => {}}
         />
 
         {/* TEXTO CLICAVEL */}
         <CustomButton
-          text="Registrar"
+          text="Já é membro? Logue-se"
           textStyle={styles.subTitle}
-          onPress={() => navigation.navigate('Register')}
+          onPress={() => navigation.navigate('Login')}
         />
       </View>
 
@@ -76,4 +76,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Register;

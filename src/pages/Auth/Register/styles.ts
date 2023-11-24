@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
-import { colors } from '../../utils/themes/themes';
+import { fonts } from '../../../utils/themes/fonts';
+import { colors } from '../../../utils/themes/themes';
 
 export const styles = StyleSheet.create({
   container: {
@@ -13,18 +14,10 @@ export const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
   },
-  button: {
-    height: 40,
-    width: 80,
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderWidth: 1.5,
-    borderColor: colors.orange,
-    borderRadius: 12,
-  },
   buttonTxt: {
-    fontSize: 18,
+    fontSize: 20,
     fontWeight: 'bold',
+    fontFamily: fonts.poppins.black,
     color: 'white',
   },
   insta: {
@@ -35,28 +28,36 @@ export const styles = StyleSheet.create({
     height: 120,
     alignSelf: 'center',
   },
-  vetor: {
+  title: {
     alignSelf: 'center',
-  },
-  footContainer: {
-    marginTop: 10,
-    alignItems: 'center',
-  },
-  descriptionText: {
-    fontSize: 16,
+    fontSize: 32,
+    fontWeight: 'bold',
     color: 'white',
+    fontFamily: fonts.poppins.bold,
+  },
+  subTitle: {
+    fontSize: 14,
+    fontWeight: 'bold',
+    color: 'white',
+    fontFamily: fonts.poppins.bold,
+  },
+  subTitleOrange: {
+    fontSize: 14,
+    fontWeight: 'bold',
+    color: colors.orange,
+    fontFamily: fonts.poppins.bold,
   },
   bigButton: {
+    marginTop: 20,
     height: 60,
-    width: 250,
+    width: 220,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: colors.orange,
-    borderRadius: 26,
-    top: 10,
-    marginBottom: 12,
+    borderRadius: 14,
   },
   copyText: {
+    alignSelf: 'center',
     color: 'grey',
     top: 12,
     fontSize: 12,

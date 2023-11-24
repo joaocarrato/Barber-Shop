@@ -1,71 +1,35 @@
-import { useQuery } from '@tanstack/react-query';
 import React from 'react';
-import { FlatList, SafeAreaView, Text, View } from 'react-native';
-import BarbersList from '../../components/template/BarbersList';
-import { getBarber } from '../../services/infra/barber.service';
-import ErrorView from '../../utils/components/ErrorView';
-import LoadingCircle from '../../utils/components/LoadingCircle';
+import { Image, Text, TouchableOpacity, View } from 'react-native';
+import BarberLogo from '../../components/atoms/BarberLogo';
+import CustomHeader from '../../components/molecules/CustomHeader';
+import Divider from '../../utils/components/Divider';
+import { Background } from '../../utils/global/icons';
+import { styles } from './styles';
 
 const Home = () => {
-  const { error, isLoading, data } = useQuery({
-    queryKey: ['barber-list'],
-    queryFn: () => getBarber(),
-  });
-
-  if (error) {
-    return <ErrorView errorName="Falha ao processar informação" />;
-  }
-
-  if (isLoading) {
-    return <LoadingCircle />;
-  }
-
-  if (data?.length === 0) {
-    return <ErrorView errorName="Nenhum barbeiro encontrado" />;
-  }
-
   return (
-    <SafeAreaView>
-      <View style={{ marginHorizontal: 12, alignItems: 'center', gap: 20 }}>
-        <Text style={{ fontSize: 36, fontWeight: 'bold' }}>Barber Shop 💈</Text>
-        <Text style={{ alignSelf: 'flex-start', marginBottom: 12 }}>
-          Cheque os nossos barbeiros abaixo e veja a disponibilidade de horário,
-          após isso é só marcar.
+    <View style={styles.container}>
+      <CustomHeader iconName="person-circle-outline" size={50} />
+
+      <BarberLogo />
+
+      <Image source={Background} style={styles.vetor} />
+
+      <Divider marginBot={10} />
+
+      <View style={styles.footContainer}>
+        <Text style={styles.descriptionText}>
+          Seja bem vindo, marque seu horário e aumente ainda mais sua
+          auto-estima
+        </Text>
+        <TouchableOpacity style={styles.bigButton}>
+          <Text style={styles.buttonTxt}>Agendar horário</Text>
+        </TouchableOpacity>
+        <Text style={styles.copyText}>
+          Todos os direitos reservados ® Thbarberclub
         </Text>
       </View>
-
-      <BarbersList data={data} />
-
-      <Text
-        style={{
-          marginLeft: 10,
-          fontSize: 22,
-          fontWeight: 'bold',
-          marginBottom: 20,
-        }}>
-        Schedule
-      </Text>
-
-      <FlatList
-        scrollEnabled={false}
-        showsVerticalScrollIndicator={false}
-        data={data}
-        keyExtractor={item => String(item.id)}
-        renderItem={({ item }) => (
-          <View
-            style={{
-              flexDirection: 'row',
-              justifyContent: 'space-between',
-              marginHorizontal: 12,
-            }}>
-            <Text style={{ fontSize: 16 }}>{item.name}</Text>
-            <Text>
-              {item.vacation === true ? 'Is on vacation' : 'Is not on vacation'}
-            </Text>
-          </View>
-        )}
-      />
-    </SafeAreaView>
+    </View>
   );
 };
 
