@@ -1,8 +1,10 @@
+import { useNavigation } from '@react-navigation/native';
 import React, { useState } from 'react';
 import { Image, Text, TouchableOpacity, View } from 'react-native';
 import BarberLogo from '../../components/atoms/BarberLogo';
 import CustomHeader from '../../components/molecules/CustomHeader';
 import Menu from '../../components/organisms/Menu';
+import { StackTypes } from '../../routes/Stack/StackNav';
 import Divider from '../../utils/components/Divider';
 import { Background } from '../../utils/global/icons';
 import { styles } from './styles';
@@ -10,8 +12,14 @@ import { styles } from './styles';
 const Home = () => {
   const [handleModal, setHandleModal] = useState(false);
 
+  const navigation = useNavigation<StackTypes>();
+
   const handleClose = () => {
     setHandleModal(false);
+  };
+
+  const handleUnity = () => {
+    navigation.navigate('Unity');
   };
 
   return (
@@ -33,7 +41,7 @@ const Home = () => {
           Seja bem vindo, marque seu horário e aumente ainda mais sua
           auto-estima
         </Text>
-        <TouchableOpacity style={styles.bigButton}>
+        <TouchableOpacity style={styles.bigButton} onPress={handleUnity}>
           <Text style={styles.buttonTxt}>Agendar horário</Text>
         </TouchableOpacity>
         <Text style={styles.copyText}>

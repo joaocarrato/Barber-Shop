@@ -4,6 +4,7 @@ import {
 } from '@react-navigation/stack';
 import { default as Initial } from '../../pages/Auth/Initial';
 import Register from '../../pages/Auth/Register/Register';
+import Unity from '../../pages/Home/Unity/Unity';
 import AuthPage from './AuthStack';
 
 type StackNavigation = {
@@ -12,6 +13,7 @@ type StackNavigation = {
   Home: undefined;
   Register: undefined;
   Initial: undefined;
+  Unity: undefined;
 };
 
 export type StackTypes = StackNavigationProp<StackNavigation>;
@@ -24,6 +26,7 @@ const StackNav = () => {
       <Stack.Screen name="Initial" component={Initial} />
       <Stack.Screen name="AuthPage" component={AuthPage} />
       <Stack.Screen name="Register" component={Register} />
+      <Stack.Screen name="Unity" component={Unity} />
     </Stack.Navigator>
   );
 };
