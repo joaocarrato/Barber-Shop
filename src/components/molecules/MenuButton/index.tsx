@@ -10,8 +10,8 @@ type Props = {
 };
 
 const MenuButton = ({ closeModal }: Props) => {
-  const handleLogout = async () => {
-    await auth().signOut();
+  const handleLogout = () => {
+    auth().signOut();
   };
 
   return (

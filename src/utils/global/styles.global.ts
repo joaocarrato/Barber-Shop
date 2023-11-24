@@ -1,14 +1,14 @@
 import { StyleSheet } from 'react-native';
-import { fonts } from '../../../utils/themes/fonts';
-import { colors } from '../../../utils/themes/themes';
+import { fonts } from '../themes/fonts';
+import { colors } from '../themes/themes';
 
 export const styles = StyleSheet.create({
   container: {
-    paddingTop: 60,
     flex: 1,
+    paddingTop: 60,
     backgroundColor: colors.background,
   },
-  unityTitle: {
+  title: {
     fontSize: 30,
     fontWeight: 'bold',
     color: 'white',
