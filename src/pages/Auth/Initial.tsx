@@ -15,13 +15,13 @@ import Divider from '../../utils/components/Divider';
 import { Background } from '../../utils/global/icons';
 import { styles } from './styles';
 
-const AuthPage = () => {
+const Initial = () => {
   const navigation = useNavigation<StackTypes>();
 
   const { height } = useWindowDimensions();
 
   const handleNavigation = () => {
-    return navigation.navigate('Login');
+    return navigation.navigate('AuthPage');
   };
 
   return (
@@ -56,4 +56,4 @@ const AuthPage = () => {
   );
 };
 
-export default AuthPage;
+export default Initial;

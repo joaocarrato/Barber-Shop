@@ -5,7 +5,7 @@ import { colors } from '../../../utils/themes/themes';
 
 type Props = {
   value?: string;
-  onChangeText?: () => void;
+  onChangeText?: (text: string) => void;
   placeHolderText: string;
   obscure: boolean;
 };

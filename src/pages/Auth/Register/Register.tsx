@@ -1,3 +1,4 @@
+import auth from '@react-native-firebase/auth';
 import { useNavigation } from '@react-navigation/native';
 import React, { useState } from 'react';
 import { Image, Text, View, useWindowDimensions } from 'react-native';
@@ -11,6 +12,9 @@ import { styles } from './styles';
 
 const Register = () => {
   const [error, setError] = useState<string>('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
 
   const { height } = useWindowDimensions();
 
@@ -18,6 +22,32 @@ const Register = () => {
 
   const handleBack = () => {
     return navigation.goBack();
+  };
+
+  const register = async () => {
+    if (password.trim() === confirmPassword.trim()) {
+      auth()
+        .createUserWithEmailAndPassword(email, password)
+        .then(userCredential => {
+          console.log('user: ', userCredential);
+          setTimeout(() => {
+            navigation.goBack();
+          }, 200);
+        })
+        .catch(error => {
+          if (error.code === 'auth/weak-password') {
+            return setError('a senha é muito fraca');
+          }
+          if (error.code === 'auth/invalid-email') {
+            return setError('O endereço de e-mail não é válido.');
+          }
+          if (error.code === 'auth/email-already-in-use') {
+            return setError(
+              'Já existe uma conta com o endereço de email fornecido.',
+            );
+          }
+        });
+    }
   };
 
   const handleScroll: boolean = height < 700 ? true : false;
@@ -46,19 +76,34 @@ const Register = () => {
       <View style={{ alignItems: 'center', marginTop: 25, gap: 15 }}>
         <TextField placeHolderText="Nome completo" obscure={false} />
 
-        <TextField placeHolderText="Email" obscure={false} />
+        <TextField
+          value={email}
+          onChangeText={item => setEmail(item)}
+          placeHolderText="Email"
+          obscure={false}
+        />
 
-        <TextField placeHolderText="Digite sua senha" obscure={true} />
-        <TextField placeHolderText="Confirme sua senha" obscure={true} />
+        <TextField
+          value={password}
+          onChangeText={item => setPassword(item)}
+          placeHolderText="Digite sua senha"
+          obscure={true}
+        />
+        <TextField
+          value={confirmPassword}
+          onChangeText={item => setConfirmPassword(item)}
+          placeHolderText="Confirme sua senha"
+          obscure={true}
+        />
         {/* BOTAO */}
 
-        <Text>{error}</Text>
+        <Text style={styles.error}>{error}</Text>
 
         <CustomButton
           text="Registrar"
           textStyle={styles.buttonTxt}
           buttonStyle={styles.bigButton}
-          onPress={() => {}}
+          onPress={register}
         />
 
         {/* TEXTO CLICAVEL */}

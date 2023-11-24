@@ -1,15 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Image, Text, TouchableOpacity, View } from 'react-native';
 import BarberLogo from '../../components/atoms/BarberLogo';
 import CustomHeader from '../../components/molecules/CustomHeader';
+import Menu from '../../components/organisms/Menu';
 import Divider from '../../utils/components/Divider';
 import { Background } from '../../utils/global/icons';
 import { styles } from './styles';
 
 const Home = () => {
+  const [handleModal, setHandleModal] = useState(false);
+
+  const handleClose = () => {
+    setHandleModal(false);
+  };
+
   return (
     <View style={styles.container}>
-      <CustomHeader iconName="person-circle-outline" size={50} />
+      <CustomHeader
+        iconName="person-circle-outline"
+        size={50}
+        onPress={() => setHandleModal(true)}
+      />
 
       <BarberLogo />
 
@@ -29,6 +40,8 @@ const Home = () => {
           Todos os direitos reservados ® Thbarberclub
         </Text>
       </View>
+
+      <Menu visible={handleModal} closeModal={handleClose} />
     </View>
   );
 };

@@ -1,5 +1,6 @@
+import auth from '@react-native-firebase/auth';
 import { useNavigation } from '@react-navigation/native';
-import React from 'react';
+import React, { useState } from 'react';
 import { Text, View, useWindowDimensions } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import BarberLogo from '../../../components/atoms/BarberLogo';
@@ -11,11 +12,30 @@ import { styles } from './styles';
 
 const Login = () => {
   const { height } = useWindowDimensions();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState<string>('');
 
   const navigation = useNavigation<StackTypes>();
 
   const handleBack = () => {
     return navigation.goBack();
+  };
+
+  const handleLogin = async () => {
+    await auth()
+      .signInWithEmailAndPassword(email, password)
+      .then(userCredential => {
+        console.log('userTryToLogin: ', userCredential);
+      })
+      .catch(error => {
+        if (error.code === 'auth/wrong-password') {
+          return setError('Senha incorreta.');
+        }
+        if (error.code === 'auth/invalid-email') {
+          return setError('O endereço de e-mail não é válido.');
+        }
+      });
   };
 
   const handleScroll: boolean = height < 700 ? true : false;
@@ -42,9 +62,19 @@ const Login = () => {
       </View>
 
       <View style={{ alignItems: 'center', marginTop: 120, gap: 15 }}>
-        <TextField placeHolderText="Email" obscure={false} />
+        <TextField
+          value={email}
+          onChangeText={item => setEmail(item)}
+          placeHolderText="Email"
+          obscure={false}
+        />
 
-        <TextField placeHolderText="Digite sua senha" obscure={true} />
+        <TextField
+          value={password}
+          onChangeText={item => setPassword(item)}
+          placeHolderText="Digite sua senha"
+          obscure={true}
+        />
 
         <CustomButton
           text="Esqueceu sua senha?"
@@ -52,13 +82,15 @@ const Login = () => {
           buttonStyle={{ alignSelf: 'flex-end', marginRight: 24 }}
         />
 
+        <Text style={styles.error}>{error}</Text>
+
         {/* BOTAO */}
 
         <CustomButton
           text="Entrar"
           textStyle={styles.buttonTxt}
           buttonStyle={styles.bigButton}
-          onPress={() => navigation.navigate('Home')}
+          onPress={handleLogin}
         />
 
         {/* TEXTO CLICAVEL */}

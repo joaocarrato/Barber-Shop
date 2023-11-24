@@ -48,7 +48,7 @@ export const styles = StyleSheet.create({
     fontFamily: fonts.poppins.bold,
   },
   bigButton: {
-    marginTop: 80,
+    marginTop: 20,
     height: 60,
     width: 220,
     justifyContent: 'center',
@@ -61,5 +61,9 @@ export const styles = StyleSheet.create({
     color: 'grey',
     top: 12,
     fontSize: 12,
+  },
+  error: {
+    fontSize: 14,
+    color: 'red',
   },
 });
