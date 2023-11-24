@@ -2,9 +2,9 @@ import {
   StackNavigationProp,
   createStackNavigator,
 } from '@react-navigation/stack';
-import AuthPage from '../pages/Auth/AuthPage';
-import Details from '../pages/Details/Details';
-import TabNav from './TabNav';
+import AuthPage from '../../pages/Auth/AuthPage';
+import Details from '../../pages/Details/Details';
+import TabNav from '../Tab/TabNav';
 
 type StackNavigation = {
   Details: {

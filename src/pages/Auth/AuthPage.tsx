@@ -2,7 +2,7 @@ import { useNavigation } from '@react-navigation/native';
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import { Button, SafeAreaView, Text, TextInput } from 'react-native';
-import { StackTypes } from '../../routes/StackNav';
+import { StackTypes } from '../../routes/Stack/StackNav';
 import { getUser } from '../../services/infra/user.service';
 import ErrorView from '../../utils/components/ErrorView';
 import LoadingCircle from '../../utils/components/LoadingCircle';

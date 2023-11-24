@@ -3,10 +3,10 @@ import {
   createBottomTabNavigator,
 } from '@react-navigation/bottom-tabs';
 import React from 'react';
-import Home from '../pages/Home/Home';
-import Settings from '../pages/Settings/Settings';
-import TabIcon from '../utils/components/TabIcon';
-import { styles } from './styles';
+import Home from '../../pages/Home/Home';
+import Settings from '../../pages/Settings/Settings';
+import TabIcon from '../../utils/components/TabIcon';
+import { styles } from '../styles';
 
 type TabNavigation = {
   Home: undefined;
