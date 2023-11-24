@@ -8,10 +8,11 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
-import { getBarberID } from '../services/barber.service';
-import ErrorView from '../utils/ErrorView';
-import LoadingCircle from '../utils/LoadingCircle';
-import ViewTextDesc from '../utils/ViewTextDesc';
+import { getBarberID } from '../../services/infra/barber.service';
+import ErrorView from '../../utils/components/ErrorView';
+import LoadingCircle from '../../utils/components/LoadingCircle';
+import ViewTextDesc from '../../utils/components/ViewTextDesc';
+import { styles } from './styles';
 
 interface TypeParams extends RouteProp<ParamListBase> {
   params: {
@@ -40,17 +41,8 @@ const Details = () => {
   }
 
   return (
-    <SafeAreaView style={{ flex: 1, alignItems: 'center', gap: 20 }}>
-      <Image
-        source={{ uri: data.avatar }}
-        style={{
-          width: '90%',
-          alignSelf: 'center',
-          height: 220,
-          borderRadius: 12,
-          marginBottom: 16,
-        }}
-      />
+    <SafeAreaView style={styles.safeArea}>
+      <Image source={{ uri: data.avatar }} style={styles.image} />
 
       <ViewTextDesc
         title="Name"
@@ -67,30 +59,13 @@ const Details = () => {
         }
       />
 
-      <View
-        style={{
-          flexDirection: 'row',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}>
-        <Text
-          style={{ fontSize: 22, fontWeight: 'bold', marginHorizontal: 16 }}>
-          Rating
-        </Text>
-        <Text style={{ fontSize: 20, color: 'orange' }}>⭐{data.rating}</Text>
+      <View style={styles.ratingContainer}>
+        <Text style={styles.ratingTitle}>Rating</Text>
+        <Text style={styles.ratingValue}>⭐{data.rating}</Text>
       </View>
 
-      <TouchableOpacity
-        style={{
-          backgroundColor: 'purple',
-          height: 60,
-          width: 120,
-          justifyContent: 'center',
-          alignItems: 'center',
-          borderRadius: 16,
-          top: 160,
-        }}>
-        <Text style={{ color: 'white', fontWeight: 'bold' }}>Set schedule</Text>
+      <TouchableOpacity style={styles.button}>
+        <Text style={styles.buttonText}>Set schedule</Text>
       </TouchableOpacity>
     </SafeAreaView>
   );

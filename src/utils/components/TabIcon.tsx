@@ -1,6 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import { styles } from './styles';
 
 type IconType = {
   iconName: string;
@@ -9,20 +10,11 @@ type IconType = {
 
 const TabIcon = ({ iconName, focused }: IconType) => {
   return (
-    <View
-      style={{
-        alignItems: 'center',
-        justifyContent: 'center',
-        top: 12,
-        backgroundColor: focused ? 'white' : 'transparent',
-        borderRadius: 99,
-        height: 50,
-        width: 50,
-      }}>
+    <View style={styles(focused).tabIconView}>
       <Icon
         name={iconName}
         size={focused ? 35 : 30}
-        color={focused ? '#704F38' : '#9A9B9E'}
+        color={focused ? '#4e5594' : '#9A9B9E'}
       />
     </View>
   );

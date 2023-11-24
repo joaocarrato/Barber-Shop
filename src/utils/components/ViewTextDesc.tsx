@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text, View } from 'react-native';
+import { styles } from './styles';
 
 type Props = {
   title: string;
@@ -9,9 +10,9 @@ type Props = {
 
 const ViewTextDesc = ({ title, subTitle, subSection }: Props) => {
   return (
-    <View style={{ alignItems: 'center' }}>
-      <Text style={{ fontSize: 22, fontWeight: 'bold' }}>{title}</Text>
-      <Text style={{ fontSize: 14 }}>
+    <View style={styles().center}>
+      <Text style={styles().title}>{title}</Text>
+      <Text style={styles().subTitle}>
         {subTitle} {subSection}
       </Text>
     </View>

@@ -1,9 +1,10 @@
 import React from 'react';
 import { ActivityIndicator, View } from 'react-native';
+import { styles } from './styles';
 
 const LoadingCircle = () => {
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+    <View style={styles().container}>
       <ActivityIndicator size={30} color={'blue'} />
     </View>
   );

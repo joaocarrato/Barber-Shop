@@ -3,9 +3,10 @@ import {
   createBottomTabNavigator,
 } from '@react-navigation/bottom-tabs';
 import React from 'react';
-import Home from '../screens/Home';
-import Settings from '../screens/Settings';
-import TabIcon from '../utils/TabIcon';
+import Home from '../pages/Home/Home';
+import Settings from '../pages/Settings/Settings';
+import TabIcon from '../utils/components/TabIcon';
+import { styles } from './styles';
 
 type TabNavigation = {
   Home: undefined;
@@ -21,19 +22,7 @@ const TabNav = () => {
     <Tab.Navigator
       screenOptions={{
         headerShown: false,
-        tabBarStyle: {
-          backgroundColor: '#1F2029',
-          height: 75,
-          alignSelf: 'center',
-          borderRadius: 50,
-          justifyContent: 'center',
-          alignItems: 'center',
-          position: 'absolute',
-          bottom: 40,
-          left: 20,
-          right: 20,
-          elevation: 0,
-        },
+        tabBarStyle: styles.bottomTabStyle,
       }}>
       <Tab.Screen
         name="Home"

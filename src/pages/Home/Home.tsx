@@ -1,10 +1,10 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import { FlatList, SafeAreaView, Text, View } from 'react-native';
-import BarberCard from '../components/BarberCard';
-import { getBarber } from '../services/barber.service';
-import ErrorView from '../utils/ErrorView';
-import LoadingCircle from '../utils/LoadingCircle';
+import BarbersList from '../../components/template/BarbersList';
+import { getBarber } from '../../services/infra/barber.service';
+import ErrorView from '../../utils/components/ErrorView';
+import LoadingCircle from '../../utils/components/LoadingCircle';
 
 const Home = () => {
   const { error, isLoading, data } = useQuery({
@@ -33,15 +33,8 @@ const Home = () => {
           após isso é só marcar.
         </Text>
       </View>
-      <FlatList
-        showsHorizontalScrollIndicator={false}
-        horizontal
-        data={data}
-        keyExtractor={item => String(item.id)}
-        renderItem={({ item }) => (
-          <BarberCard name={item.name} avatar={item.avatar} id={item.id} />
-        )}
-      />
+
+      <BarbersList data={data} />
 
       <Text
         style={{
