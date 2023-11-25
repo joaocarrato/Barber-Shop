@@ -5,12 +5,16 @@ import { colors } from '../../../utils/themes/themes';
 import InstaLogo from '../../atoms/InstaLogo';
 
 type Props = {
-  iconName: string;
+  iconName?: string;
   size?: number;
   onPress?: () => void;
 };
 
-const CustomHeader = ({ iconName, size, onPress }: Props) => {
+const CustomHeader = ({
+  iconName = 'chevron-back-outline',
+  size = 32,
+  onPress,
+}: Props) => {
   return (
     <View style={styles.header}>
       <TouchableOpacity onPress={onPress}>

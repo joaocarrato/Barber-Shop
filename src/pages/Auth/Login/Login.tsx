@@ -46,11 +46,7 @@ const Login = () => {
       extraHeight={77}
       style={styles.container}
       scrollEnabled={handleScroll}>
-      <CustomHeader
-        iconName="chevron-back-outline"
-        size={32}
-        onPress={handleBack}
-      />
+      <CustomHeader iconName="chevron-back-outline" onPress={handleBack} />
 
       <BarberLogo />
 

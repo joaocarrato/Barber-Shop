@@ -37,11 +37,7 @@ const Unity = () => {
 
   return (
     <View style={styles.container}>
-      <CustomHeader
-        iconName="chevron-back-outline"
-        size={40}
-        onPress={handleBack}
-      />
+      <CustomHeader iconName="chevron-back-outline" onPress={handleBack} />
 
       <BarberLogo />
 

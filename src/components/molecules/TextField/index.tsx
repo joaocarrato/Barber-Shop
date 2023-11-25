@@ -18,6 +18,7 @@ const TextField = ({
 }: Props) => {
   return (
     <TextInput
+      textContentType="password"
       value={value}
       onChangeText={onChangeText}
       autoCapitalize="none"

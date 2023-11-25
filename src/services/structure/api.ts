@@ -1,7 +1,6 @@
 import axios from 'axios';
 
-const URL: string = 'http://localhost:3000';
-
 export const api = axios.create({
-  baseURL: URL,
+  baseURL: 'http://nodejs-production-75cd.up.railway.app',
+  // baseURL: 'http://localhost:3000',
 });

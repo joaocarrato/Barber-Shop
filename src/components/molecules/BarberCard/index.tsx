@@ -1,33 +1,27 @@
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
-import { Image, Text, TouchableOpacity, View } from 'react-native';
+import { Image, Text, TouchableOpacity } from 'react-native';
 import { StackTypes } from '../../../routes/Stack/StackNav';
+import { styles } from './styles';
 
-interface Props {
+type Prop = {
   name: string;
-  avatar: string;
-  id: string;
-}
 
-const BarberCard = ({ name, avatar, id }: Props) => {
+  avatar: string;
+  local: string;
+  service: string;
+};
+
+const BarberCard = ({ avatar, name, local, service }: Prop) => {
   const navigation = useNavigation<StackTypes>();
 
   return (
-    <View
-      style={{
-        flex: 1,
-        margin: 20,
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}>
-      <TouchableOpacity onPress={() => navigation.navigate('Details', { id })}>
-        <Image
-          source={{ uri: avatar }}
-          style={{ height: 80, width: 80, borderRadius: 99, marginBottom: 12 }}
-        />
-      </TouchableOpacity>
-      <Text>{name}</Text>
-    </View>
+    <TouchableOpacity
+      style={{ margin: 8 }}
+      onPress={() => navigation.navigate('Schedule', { name, local, service })}>
+      <Image source={{ uri: avatar }} style={styles.image} />
+      <Text style={styles.name}>{name}</Text>
+    </TouchableOpacity>
   );
 };
 

@@ -58,11 +58,7 @@ const Register = () => {
       extraScrollHeight={0.1}
       style={styles.container}
       scrollEnabled={handleScroll}>
-      <CustomHeader
-        iconName="chevron-back-outline"
-        size={32}
-        onPress={handleBack}
-      />
+      <CustomHeader iconName="chevron-back-outline" onPress={handleBack} />
 
       <Image source={Logo} style={styles.logo} />
 

@@ -52,7 +52,6 @@ const ChooseService = () => {
     <View style={styles.container}>
       <CustomHeader
         iconName="chevron-back-outline"
-        size={34}
         onPress={() => navigation.goBack()}
       />
 

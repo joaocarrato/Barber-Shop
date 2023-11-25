@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native';
 import { fonts } from '../themes/fonts';
 import { colors } from '../themes/themes';
 
-export const styles = StyleSheet.create({
+export const globalStyle = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: 60,

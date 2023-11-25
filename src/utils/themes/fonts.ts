@@ -3,5 +3,6 @@ export const fonts = {
     regular: 'Poppins Regular',
     bold: 'Poppins Bold',
     black: 'Poppins Black',
+    thin: 'Poppins Thin',
   },
 };
