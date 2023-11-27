@@ -31,7 +31,7 @@
 		799B3E3A2B0EE90700DC7984 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 799B3E272B0EE90700DC7984 /* SimpleLineIcons.ttf */; };
 		799B3E3B2B0EE90700DC7984 /* FontAwesome6_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 799B3E282B0EE90700DC7984 /* FontAwesome6_Brands.ttf */; };
 		799B3E3C2B0EE90700DC7984 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 799B3E292B0EE90700DC7984 /* MaterialIcons.ttf */; };
-		79B08C6F2B11223400EB3BC7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 79B08C6E2B11223400EB3BC7 /* GoogleService-Info.plist */; };
+		79F0E1512B11A91500516AFE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 79F0E1502B11A91500516AFE /* GoogleService-Info.plist */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		A5D7D53E7BC24C2A8AC2CCDA /* Poppins Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5EF7FE16CDE3439892AC177F /* Poppins Regular.ttf */; };
 		F9E9D42CC16E2B348E5BF8F3 /* Pods_BarberApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2B25EBDAA446E568E2EA32B /* Pods_BarberApp.framework */; };
@@ -80,7 +80,7 @@
 		799B3E272B0EE90700DC7984 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SimpleLineIcons.ttf; sourceTree = "<group>"; };
 		799B3E282B0EE90700DC7984 /* FontAwesome6_Brands.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome6_Brands.ttf; sourceTree = "<group>"; };
 		799B3E292B0EE90700DC7984 /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialIcons.ttf; sourceTree = "<group>"; };
-		79B08C6E2B11223400EB3BC7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Documents/firebase/barber_app/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		79F0E1502B11A91500516AFE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Documents/firebase/barber_app/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = BarberApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-BarberApp-BarberAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BarberApp-BarberAppTests.release.xcconfig"; path = "Target Support Files/Pods-BarberApp-BarberAppTests/Pods-BarberApp-BarberAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		D2B25EBDAA446E568E2EA32B /* Pods_BarberApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BarberApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -128,7 +128,7 @@
 		13B07FAE1A68108700A75B9A /* BarberApp */ = {
 			isa = PBXGroup;
 			children = (
-				79B08C6E2B11223400EB3BC7 /* GoogleService-Info.plist */,
+				79F0E1502B11A91500516AFE /* GoogleService-Info.plist */,
 				799B3E162B0EE90700DC7984 /* Fonts */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
@@ -341,7 +341,7 @@
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				799B3E302B0EE90700DC7984 /* MaterialCommunityIcons.ttf in Resources */,
 				799B3E392B0EE90700DC7984 /* FontAwesome6_Solid.ttf in Resources */,
-				79B08C6F2B11223400EB3BC7 /* GoogleService-Info.plist in Resources */,
+				79F0E1512B11A91500516AFE /* GoogleService-Info.plist in Resources */,
 				799B3E2D2B0EE90700DC7984 /* FontAwesome6_Regular.ttf in Resources */,
 				799B3E3C2B0EE90700DC7984 /* MaterialIcons.ttf in Resources */,
 				A5D7D53E7BC24C2A8AC2CCDA /* Poppins Regular.ttf in Resources */,
@@ -616,7 +616,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.barbershop;
+				PRODUCT_BUNDLE_IDENTIFIER = com.barbershop.carrato;
 				PRODUCT_NAME = BarberApp;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -647,7 +647,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.barbershop;
+				PRODUCT_BUNDLE_IDENTIFIER = com.barbershop.carrato;
 				PRODUCT_NAME = BarberApp;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
