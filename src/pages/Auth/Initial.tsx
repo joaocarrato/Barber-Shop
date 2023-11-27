@@ -52,6 +52,7 @@ const Initial = () => {
           Todos os direitos reservados ® Thbarberclub
         </Text>
       </View>
+      {height < 700 && <View style={{ height: 120 }} />}
     </ScrollView>
   );
 };

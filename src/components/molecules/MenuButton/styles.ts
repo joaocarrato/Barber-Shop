@@ -1,15 +1,16 @@
-import { StyleSheet } from 'react-native';
+import { RFValue } from 'react-native-responsive-fontsize';
+import { ScaledSheet } from 'react-native-size-matters';
 import { fonts } from '../../../utils/themes/fonts';
 
-export const styles = StyleSheet.create({
+export const styles = ScaledSheet.create({
   menuItem: {
-    paddingHorizontal: 10,
+    paddingHorizontal: '10@s',
     flexDirection: 'row',
-    gap: 30,
+    gap: '30@s',
     alignItems: 'center',
   },
   menuItemText: {
-    fontSize: 18,
+    fontSize: RFValue(16),
     color: 'white',
     fontFamily: fonts.poppins.bold,
     fontWeight: 'bold',

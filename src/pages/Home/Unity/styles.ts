@@ -1,9 +1,9 @@
-import { StyleSheet } from 'react-native';
 import { RFValue } from 'react-native-responsive-fontsize';
+import { ScaledSheet } from 'react-native-size-matters';
 import { fonts } from '../../../utils/themes/fonts';
 import { colors } from '../../../utils/themes/themes';
 
-export const styles = StyleSheet.create({
+export const styles = ScaledSheet.create({
   container: {
     paddingTop: 60,
     flex: 1,

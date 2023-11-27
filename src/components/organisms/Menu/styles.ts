@@ -1,7 +1,7 @@
-import { StyleSheet } from 'react-native';
+import { ScaledSheet } from 'react-native-size-matters';
 import { colors } from '../../../utils/themes/themes';
 
-export const styles = StyleSheet.create({
+export const styles = ScaledSheet.create({
   background: {
     flex: 1,
     backgroundColor: 'rgba(0,0,0,0.4)',
@@ -10,6 +10,6 @@ export const styles = StyleSheet.create({
     backgroundColor: colors.background,
     width: '55%',
     flex: 1,
-    paddingTop: 60,
+    paddingTop: '60@s',
   },
 });

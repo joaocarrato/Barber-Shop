@@ -1,5 +1,7 @@
 import React from 'react';
-import { StyleSheet, TextInput } from 'react-native';
+import { TextInput } from 'react-native';
+import { RFValue } from 'react-native-responsive-fontsize';
+import { ScaledSheet } from 'react-native-size-matters';
 import { fonts } from '../../../utils/themes/fonts';
 import { colors } from '../../../utils/themes/themes';
 
@@ -30,15 +32,15 @@ const TextField = ({
   );
 };
 
-const styles = StyleSheet.create({
+const styles = ScaledSheet.create({
   input: {
-    borderWidth: 3.5,
+    borderWidth: '3.5@s',
     borderColor: colors.orange,
     borderRadius: 24,
-    height: 60,
-    paddingHorizontal: 12,
+    height: '60@s',
+    paddingHorizontal: '12@s',
     width: '90%',
-    fontSize: 18,
+    fontSize: RFValue(15),
     fontWeight: 'bold',
     fontFamily: fonts.poppins.bold,
     color: 'white',

@@ -1,9 +1,9 @@
-import { StyleSheet } from 'react-native';
 import { RFValue } from 'react-native-responsive-fontsize';
+import { ScaledSheet } from 'react-native-size-matters';
 import { fonts } from '../../../utils/themes/fonts';
 import { colors } from '../../../utils/themes/themes';
 
-export const styles = StyleSheet.create({
+export const styles = ScaledSheet.create({
   subTitle: {
     fontSize: RFValue(14),
     fontWeight: '200',
@@ -15,11 +15,11 @@ export const styles = StyleSheet.create({
     alignSelf: 'center',
     justifyContent: 'center',
     alignItems: 'center',
-    width: 197,
-    height: 55,
+    width: '197@s',
+    height: '55@s',
     borderRadius: 12,
     borderColor: colors.orange,
-    borderWidth: 4,
+    borderWidth: '4@s',
   },
   text: {
     fontSize: RFValue(16),

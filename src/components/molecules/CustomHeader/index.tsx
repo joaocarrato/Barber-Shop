@@ -1,5 +1,6 @@
 import React from 'react';
-import { StyleSheet, TouchableOpacity, View } from 'react-native';
+import { TouchableOpacity, View } from 'react-native';
+import { ScaledSheet, scale } from 'react-native-size-matters';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { colors } from '../../../utils/themes/themes';
 import InstaLogo from '../../atoms/InstaLogo';
@@ -12,7 +13,7 @@ type Props = {
 
 const CustomHeader = ({
   iconName = 'chevron-back-outline',
-  size = 32,
+  size = scale(32),
   onPress,
 }: Props) => {
   return (
@@ -25,10 +26,10 @@ const CustomHeader = ({
   );
 };
 
-const styles = StyleSheet.create({
+const styles = ScaledSheet.create({
   header: {
     flexDirection: 'row',
-    paddingHorizontal: 20,
+    paddingHorizontal: '20@s',
     justifyContent: 'space-between',
     alignItems: 'center',
   },
