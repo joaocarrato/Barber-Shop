@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { RFValue } from 'react-native-responsive-fontsize';
 import { fonts } from '../themes/fonts';
 import { colors } from '../themes/themes';
 
@@ -9,11 +10,12 @@ export const globalStyle = StyleSheet.create({
     backgroundColor: colors.background,
   },
   title: {
-    fontSize: 30,
+    fontSize: RFValue(26),
     fontWeight: 'bold',
     color: 'white',
     fontFamily: fonts.poppins.black,
     alignSelf: 'center',
     marginBottom: 60,
+    textAlign: 'center',
   },
 });

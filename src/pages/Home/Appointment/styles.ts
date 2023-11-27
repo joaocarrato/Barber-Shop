@@ -1,10 +1,11 @@
 import { StyleSheet } from 'react-native';
+import { RFValue } from 'react-native-responsive-fontsize';
 import { fonts } from '../../../utils/themes/fonts';
 import { colors } from '../../../utils/themes/themes';
 
 export const styles = StyleSheet.create({
   subTitle: {
-    fontSize: 14,
+    fontSize: RFValue(14),
     fontWeight: '200',
     fontFamily: fonts.poppins.thin,
     color: 'white',
@@ -21,7 +22,7 @@ export const styles = StyleSheet.create({
     borderWidth: 4,
   },
   text: {
-    fontSize: 16,
+    fontSize: RFValue(16),
     fontFamily: fonts.poppins.bold,
     fontWeight: 'bold',
     color: colors.orange,

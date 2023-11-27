@@ -18,3 +18,10 @@ export interface ISchedule {
   id: number;
   hour: string;
 }
+
+export interface IUser {
+  hour: string;
+  unity: string;
+  service: string;
+  barber: string;
+}

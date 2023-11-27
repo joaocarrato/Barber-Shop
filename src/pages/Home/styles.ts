@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { RFValue } from 'react-native-responsive-fontsize';
 import { colors } from '../../utils/themes/themes';
 
 export const styles = StyleSheet.create({
@@ -25,7 +26,7 @@ export const styles = StyleSheet.create({
     alignItems: 'center',
   },
   descriptionText: {
-    fontSize: 16,
+    fontSize: RFValue(14),
     color: 'white',
     textAlign: 'center',
     paddingHorizontal: 12,
@@ -43,10 +44,10 @@ export const styles = StyleSheet.create({
   copyText: {
     color: 'grey',
     top: 12,
-    fontSize: 12,
+    fontSize: RFValue(12),
   },
   buttonTxt: {
-    fontSize: 18,
+    fontSize: RFValue(18),
     fontWeight: 'bold',
     color: 'white',
   },
