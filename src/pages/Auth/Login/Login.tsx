@@ -29,11 +29,17 @@ const Login = () => {
         console.log('userTryToLogin: ', userCredential);
       })
       .catch(error => {
+        console.log(error);
         if (error.code === 'auth/wrong-password') {
           return setError('Senha incorreta.');
         }
         if (error.code === 'auth/invalid-email') {
           return setError('O endereço de e-mail não é válido.');
+        }
+        if (error.code === 'auth/internal-error') {
+          return setError(
+            'O servidor de autenticação encontrou um erro inesperado ao tentar processar a solicitação.',
+          );
         }
       });
   };
